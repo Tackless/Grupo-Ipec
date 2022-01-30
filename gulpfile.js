@@ -32,9 +32,12 @@ function css() {
 
 function javascript() {
     return src(paths.js)
-      .pipe(terser())
-      .pipe(sourcemaps.write('.'))
-      .pipe(dest('public/build/js'));
+        .pipe(sourcemaps.init())
+        .pipe(concat('bundle.js')) // final output file name
+        .pipe(terser())
+        .pipe(sourcemaps.write('.'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(dest('./public/build/js'))
 }
 
 function imagenes() {
@@ -58,7 +61,7 @@ function watchArchivos() {
     watch( paths.imagenes, imagenes );
     watch( paths.imagenes, versionWebp );
 }
-  
+
 exports.css = css;
 exports.watchArchivos = watchArchivos;
 exports.default = parallel(css, javascript,  imagenes, versionWebp,  watchArchivos ); 

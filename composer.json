@@ -1,7 +1,14 @@
 {
-    "name": "juandelatorre/up-task_mvc",
-    "description": "Proyecto UpTask MVC, PHP 8, SASS",
+    "name": "oswal/ipec",
+    "description": "Crear el sitio web de Grupo Ipec",
     "type": "project",
+    "authors": [
+        {
+            "name": "Donovan Eliosa",
+            "email": "oswaldo.d.b.e@hotmail.com"
+        }
+    ],
+    "require": {},
     "autoload": {
         "psr-4": {
             "MVC\\" : "./",
