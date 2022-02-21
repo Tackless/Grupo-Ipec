@@ -1,3 +1,12 @@
+// Colores
+$azul_rey: #2196f3;
+$azul: #0303b5;
+$beige: #ffddb8;
+
+$primary: $azul;
+$info: $azul_rey;
+$warning: $beige;
+
 // Tipografía 
 $headings-font-weight: 700;
 $font-size-root: 62.5%;
@@ -9,5 +18,7 @@ $h3-font-size: 3rem;
 
 // Espaciado
 $spacer: 5rem;
+$enable-negative-margins: true;
+$carousel-control-icon-width: 4rem;
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';

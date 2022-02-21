@@ -1,6 +1,13 @@
 <div class="container-xl p-2 d-grid gap-2">
     <h2 class="text-center">Agendar Cita</h2>
 
+    <?php if ($resultado) :?>
+        <div class="row justify-content-center">
+            <p class="col-md-10 bg-success text-white text-center fs-3">Cita Creada con Éxito</p>
+        </div>
+
+    <?php endif  ?>
+
     <div class="row justify-content-center">
         <form method="POST" class="col-md-10 needs-validation" novalidate>
             <fieldset>
@@ -12,7 +19,7 @@
                 </div>
                 <div class="mb-1">
                     <label for="nombre" class="form-label">Apellido: </label>
-                    <input type="text" id="nombre" class="form-control" placeholder="Tu Nombre" name="contacto[apellido]" required>
+                    <input type="text" id="nombre" class="form-control" placeholder="Tu Apellido" name="contacto[apellido]" required>
                     <span class="invalid-feedback">Escribe tu Apellido.</span>
                 </div>
                 <div class="mb-1">

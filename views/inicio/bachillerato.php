@@ -14,7 +14,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header p-1">
-                        <h5 class="modal-title" id="exampleModalLabel">Horarios <?php echo utf8_encode($bachillerato->nombre); ?></h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Horarios Bachillerato <?php echo utf8_encode($bachillerato->nombre); ?></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body table-responsive p-1">

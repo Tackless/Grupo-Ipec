@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Model\Bachillerato;
 use Model\Carreras;
+use Model\Cita;
 use MVC\Router;
 
 class MainController {
@@ -28,24 +29,40 @@ class MainController {
         
         $carreras = Carreras::all();
 
-        $router->render('/inicio/licenciaturas', [
+        $router->render('/licenciaturas/licenciaturas', [
             'carreras' => $carreras
 
         ]);
     }
     
+    public static function licenciatura(Router $router) {
+        
+        $id = validarORedireccionar('licenciaturas');
+
+        $carrera = Carreras::find($id);
+
+        $router->render('/licenciaturas/licenciatura', [
+            'carrera' => $carrera
+
+        ]);
+    }
+    
     public static function cita(Router $router) {
+
+        $respuestas = new Cita;
+        $resultado = false;
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
-            $respuestas = $_POST['contacto'];
+            $respuestas = new Cita($_POST['contacto']);
 
-            debuguear($respuestas);
+            $resultado = $respuestas->guardar();
+            
         }
 
         $router->render('/inicio/cita', [
 
-            
+            'resultado' => $resultado
 
         ]);
     }

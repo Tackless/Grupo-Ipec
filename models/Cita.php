@@ -4,7 +4,7 @@ namespace Model;
 
 class Cita extends ActiveRecord {
 
-    protected static $tabla = 'cita';
+    protected static $tabla = 'citas';
     protected static $columnasDB = ['id', 'nombre','apellido', 'informes', 'telefono', 'email', 'fecha', 'hora'];
 
     public $id;
