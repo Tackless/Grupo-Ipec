@@ -23,16 +23,25 @@
                     <span class="invalid-feedback">Escribe tu Apellido.</span>
                 </div>
                 <div class="mb-1">
+                    <label for="asunto" class="form-label">Plantel: </label>
+                    <select class="form-select" id="validationCustom04" name="contacto[plantel]" required>
+                        <option selected disabled value="">--Seleccionar--</option>
+                        <option>Chalco</option>
+                        <option>Valle de Chalco</option>
+                    </select>
+                    <span class="invalid-feedback">Elige una opción.</span>
+                </div>
+                <div class="mb-1">
                     <label for="asunto" class="form-label">Informes sobre: </label>
                     <select class="form-select" id="validationCustom04" name="contacto[informes]" required>
                         <option selected disabled value="">--Seleccionar--</option>
-                        <option>Bachillerato en 7 meses</option>
-                        <option>Bachillerato en 18 meses</option>
-                        <option>Bachillerato en 1 examen</option>
                         <option>Lic. Psicología</option>
                         <option>Lic. Derecho</option>
                         <option>Lic. Pedagogía</option>
                         <option>Lic. Enfermería</option>
+                        <option>Bachillerato en 18 meses</option>
+                        <option>Bachillerato en 7 meses</option>
+                        <option>Bachillerato en 1 examen</option>
                     </select>
                     <span class="invalid-feedback">Elige una opción.</span>
                 </div>

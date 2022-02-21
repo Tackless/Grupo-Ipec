@@ -3,8 +3,8 @@
         <h2 class="text-center p-2">Buscar Citas por Fecha</h2>
         <form class="col-md-6 "> 
             <div class="campo">
-                <label class="form-label" for="fecha">Fecha: </label>
-                <input class="form-control mb-2" type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>"> 
+                <label class="form-label" for="fecha-listado">Fecha: </label>
+                <input class="form-control mb-2" type="date" id="fecha-listado" name="fecha" value="<?php echo $fecha; ?>"> 
             </div>
         </form>
     </div>
