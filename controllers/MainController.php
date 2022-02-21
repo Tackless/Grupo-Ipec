@@ -10,18 +10,21 @@ use MVC\Router;
 class MainController {
     public static function index(Router $router) {
         
+        $bachillerato_opciones = Bachillerato::all();
 
         $router->render('/inicio/inicio', [
-
+            'bachillerato_opciones' => $bachillerato_opciones
         ]);
     }
 
     public static function bachillerato(Router $router) {
         
-        $bachillerato_opciones = Bachillerato::all();
+        $id = validarORedireccionar('/', 3);
+
+        $bachillerato = Bachillerato::find($id);
 
         $router->render('/inicio/bachillerato', [
-            'bachillerato_opciones' => $bachillerato_opciones
+            'bachillerato' => $bachillerato
         ]);
     }
 
@@ -37,7 +40,7 @@ class MainController {
     
     public static function licenciatura(Router $router) {
         
-        $id = validarORedireccionar('licenciaturas');
+        $id = validarORedireccionar('licenciaturas', 4);
 
         $carrera = Carreras::find($id);
 
