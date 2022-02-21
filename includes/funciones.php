@@ -20,6 +20,12 @@ function isAuth() : void {
     }
 }
 
+function isRol($rol) {
+    if ($_SESSION['rol'] != $rol) {
+        header('Location: /');
+    }
+}
+
 function validarORedireccionar(string $url) {
     // Validar que sea un ID válido
     $id = $_GET['id'];
@@ -30,4 +36,12 @@ function validarORedireccionar(string $url) {
     }
 
     return $id;
+}
+
+function esUltimo(string $actual, string $proximo) : bool {
+
+    if ($actual != $proximo) {
+        return true;
+    } 
+    return false;
 }

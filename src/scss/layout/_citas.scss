@@ -1,0 +1,12 @@
+@use 'base/variables' as v;
+
+.citas {
+
+    p {
+        color: v.$negro;
+    }
+
+    span {
+        color: v.$grisOscuro;
+    }
+}

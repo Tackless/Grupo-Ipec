@@ -19,9 +19,9 @@ class LoginController {
                     // Verificar el password
                     if ($usuario->comprobarPasswordAndConfirmado($auth->password)) {
                         // Autenticar el usuario
-                        if(!isset($_SESSION)) {
-                            session_start();
-                        };
+                        session_start();
+                        // if(!isset($_SESSION)) {
+                        // };
 
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre . " " . $usuario->apellido;
@@ -29,8 +29,10 @@ class LoginController {
                         // Redireccionar
                         if ($usuario->rol === '1') {
                             $_SESSION['rol'] = $usuario->rol ?? null;
-                            debuguear($_SESSION);
                             header('location: /admin');
+                        } else if ($usuario->rol === '3') {
+                            $_SESSION['rol'] = $usuario->rol ?? null;
+                            header('location: /citas');
                         } else {
                             header('location: /cita');
                         }
@@ -43,7 +45,7 @@ class LoginController {
 
         $alertas = Usuario::getAlertas();
         
-        $router->render('/iniciar-sesion/login', [
+        $router->render('/auth/login', [
             'alertas' => $alertas
         ]);
     }

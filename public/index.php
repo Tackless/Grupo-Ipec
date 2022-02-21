@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\CitasController;
 use Controllers\MainController;
 use Controllers\LoginController;
 use MVC\Router;
@@ -18,6 +19,9 @@ $router->post('/cita', [MainController::class, 'cita']);
 // Inicio de Sesión
 $router->get('/iniciar-sesion', [LoginController::class, 'login']);
 $router->post('/iniciar-sesion', [LoginController::class, 'login']);
+
+// Citas
+$router->get('/citas', [CitasController::class, 'citas']);
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
