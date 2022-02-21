@@ -5,7 +5,7 @@
         
         <div class="container-xl col-md-6 mb-1 ">
             <div class="card rounded">
-                <img src="build/img/licenciaturas.webp" alt="Imagen Carrera" class="card-img-top" alt="...">
+                <img src="build/img/lic/<?php echo $carrera->id; ?>.webp" alt="Imagen Carrera" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo utf8_encode($carrera->nombre); ?></h5>
                     <p class="card-text"><?php echo utf8_encode($carrera->descripcion); ?></p>

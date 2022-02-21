@@ -21,11 +21,14 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="bachillerato" class="">
+                <a type="button" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalBach">
                     <h3 class="text-dark text-center mb-0">Bachillerato</h3>
                     <img src="build/img/bachillerato.webp" alt="Imagen Bachillerato" class="img-fluid">
-                </a>    
+                </a>
             </div>
+
+            <?php include_once __DIR__ . '/../templates/modal-bachillerato.php'; ?>
+
             <div class="carousel-item">
                 <a href="licenciaturas">
                     <h3 class="text-dark text-center mb-0">Licenciatura</h3>

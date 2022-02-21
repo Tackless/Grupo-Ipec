@@ -26,12 +26,12 @@ function isRol($rol) {
     }
 }
 
-function validarORedireccionar(string $url) {
+function validarORedireccionar(string $url, int $limite) {
     // Validar que sea un ID válido
     $id = $_GET['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT);
 
-    if (!$id || $id > 4 || $id < 1) {
+    if (!$id || $id > $limite || $id < 1) {
         header("Location: /${$url}");
     }
 
