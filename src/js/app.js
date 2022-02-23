@@ -33,7 +33,6 @@ function eventListeners() {
 
 function mostrarMetodosContacto(event) {
     const contactoDiv = document.querySelector('#contacto');
-    console.log('its happen');
 
     if (event.target.value === 'telefono') {
         contactoDiv.innerHTML = `
@@ -49,8 +48,18 @@ function mostrarMetodosContacto(event) {
         // <label class="form-label" for="hora">Hora</label>
         // <input class="form-control" type="time" id="hora" min="09:00" max="18:00" name="contacto[hora]" required></input>
 
+    } else if (event.target.value === 'email') {
+        contactoDiv.innerHTML = `
+            <label for="email" class="form-label">E-mail: </label>
+            <input type="email" id="email" class="form-control" placeholder="Tu E-mail" name="contacto[email]" required>
+            <span class="invalid-feedback">Ingresa tu E-mail.</span>
+        `;
     } else {
         contactoDiv.innerHTML = `
+            <label for="tel" class="form-label">Teléfono: </label>
+            <input type="tel" id="tel" class="form-control mb-1" placeholder="Tu Teléfono" name="contacto[telefono]" required>
+            <span class="invalid-feedback">Escribe tu teléfono</span>
+
             <label for="email" class="form-label">E-mail: </label>
             <input type="email" id="email" class="form-control" placeholder="Tu E-mail" name="contacto[email]" required>
             <span class="invalid-feedback">Ingresa tu E-mail.</span>

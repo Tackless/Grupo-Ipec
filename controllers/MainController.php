@@ -9,6 +9,10 @@ use MVC\Router;
 
 class MainController {
     public static function index(Router $router) {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
         
         $bachillerato_opciones = Bachillerato::all();
 
@@ -19,6 +23,10 @@ class MainController {
 
     public static function bachillerato(Router $router) {
         
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
         $id = validarORedireccionar('/', 3);
 
         $bachillerato = Bachillerato::find($id);
@@ -30,6 +38,10 @@ class MainController {
 
     public static function licenciaturas(Router $router) {
         
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
         $carreras = Carreras::all();
 
         $router->render('/licenciaturas/licenciaturas', [
@@ -40,6 +52,10 @@ class MainController {
     
     public static function licenciatura(Router $router) {
         
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
         $id = validarORedireccionar('licenciaturas', 4);
 
         $carrera = Carreras::find($id);
@@ -51,6 +67,10 @@ class MainController {
     }
     
     public static function cita(Router $router) {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
 
         $respuestas = new Cita;
         $resultado = false;

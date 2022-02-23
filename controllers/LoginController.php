@@ -8,6 +8,11 @@ use MVC\Router;
 class LoginController {
 
     public static function login(Router $router) {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        
         $alertas = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,6 +30,7 @@ class LoginController {
 
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre . " " . $usuario->apellido;
+                        $_SESSION['plantel'] = $usuario->plantel;
                         $_SESSION['login'] = true;
                         // Redireccionar
                         if ($usuario->rol === '1') {
@@ -48,5 +54,14 @@ class LoginController {
         $router->render('/auth/login', [
             'alertas' => $alertas
         ]);
+    }
+
+    public static function logout() {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $_SESSION = [];
+        header('location: /');
     }
 }

@@ -7,7 +7,7 @@ use MVC\Router;
 
 class CitasController {
 
-    public static function citas(Router $router) {
+    public static function index(Router $router) {
         
         if (!isset($_SESSION)) {
             session_start();
@@ -29,7 +29,7 @@ class CitasController {
 
         // Consultar la base de datos
         $consulta = "SELECT citas.id, citas.hora, citas.nombre, citas.apellido, ";
-        $consulta .= " citas.email, citas.telefono, citas.informes as informes ";
+        $consulta .= " citas.plantel, citas.fecha, citas.email, citas.telefono, citas.informes as informes ";
         $consulta .= " FROM citas  ";
         $consulta .= " WHERE fecha =  '${fecha}' ";
 
@@ -40,5 +40,20 @@ class CitasController {
             'citas' => $citas,
             'fecha' => $fecha
         ]);
+    }
+
+    public static function eliminar() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            // Validar id
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+        
+            if ($id) {
+                $cita = Cita::find($id);
+                $cita->eliminar();
+                header('location:' . $_SERVER['HTTP_REFERER']);
+            }
+        }
     }
 }

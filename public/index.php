@@ -19,10 +19,14 @@ $router->post('/cita', [MainController::class, 'cita']);
 // Inicio de Sesión
 $router->get('/iniciar-sesion', [LoginController::class, 'login']);
 $router->post('/iniciar-sesion', [LoginController::class, 'login']);
+$router->get('/logout', [LoginController::class, 'logout']);
 
 // Citas
-$router->get('/citas', [CitasController::class, 'citas']);
+$router->get('/citas', [CitasController::class, 'index']);
+$router->post('/citas/eliminar', [CitasController::class, 'eliminar']);
 
+// Admin
+$router->get('/admin', [MainController::class, 'index']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

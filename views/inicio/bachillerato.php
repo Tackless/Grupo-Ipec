@@ -1,3 +1,4 @@
+<?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <div class="container-xl p-2 d-grid gap-2">
     <h2 class="text-center">Bachillerato <?php echo utf8_encode($bachillerato->nombre); ?></h2>
 

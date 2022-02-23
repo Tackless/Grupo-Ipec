@@ -1,3 +1,4 @@
+<?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <div class="container-xl p-2 d-grid gap-2">
     <h2 class="text-center">Agendar Cita</h2>
 
@@ -54,6 +55,10 @@
                 <div class="mb-1">
                     <input class="form-check-input" type="radio" value="email" id="contactar-email" name="contacto[contacto]" required>
                     <label class="form-check-label" for="contactar-email">E-mail</label>
+                </div>
+                <div class="mb-1">
+                    <input class="form-check-input" type="radio" value="ambos" id="contactar-ambos" name="contacto[contacto]" required>
+                    <label class="form-check-label" for="contactar-ambos">Ambos</label>
                 </div>
                     
                 <div class="mb-1" id="contacto">

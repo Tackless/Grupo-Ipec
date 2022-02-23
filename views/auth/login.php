@@ -1,3 +1,4 @@
+<?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <div class="container-xl p-2 d-grid gap-2">
     <div class="text-center">
         <h2>Iniciar Sesión</h2>

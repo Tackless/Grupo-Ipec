@@ -1,6 +1,7 @@
+<?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <div class="row">
     <div class="col-md-6 py-4 text-white text-center promociones"><h2 class="">Promociones Febrero</h2></div>
-    <div class="col-md-6 bg-warning ">
+    <div class="col-md-6 bg-info ">
         <ul class="list-unstyled my-3 mx-2">
             <li class="mb-1 fw-bold text-white"> &raquo; Lorem ipsum dolor sit, amet consectetur adipisicing elit</li>
             <li class="mb-1 "> &raquo; Lorem ipsum dolor sit, amet consectetur adipisicing elit</li>

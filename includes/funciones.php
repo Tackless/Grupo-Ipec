@@ -21,7 +21,9 @@ function isAuth() : void {
 }
 
 function isRol($rol) {
-    if ($_SESSION['rol'] != $rol) {
+    if ($_SESSION['rol'] === '1' ) {
+        return;
+    } else if ($_SESSION['rol'] != $rol) {
         header('Location: /');
     }
 }

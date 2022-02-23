@@ -1,3 +1,4 @@
+<?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <h2 class="text-center"><?php echo utf8_encode($carrera->nombre); ?></h2>
 
 <div class="container-xl">

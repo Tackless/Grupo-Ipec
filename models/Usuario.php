@@ -6,13 +6,14 @@ class Usuario extends ActiveRecord {
     // Base de datos
 
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'apellido', 'password', 'rol'];
+    protected static $columnasDB = ['id', 'nombre', 'apellido', 'password', 'rol', 'plantel'];
 
     public $id;
     public $nombre;
     public $apellido;
     public $password;
-    public $rol;
+    public $rol; 
+    public $plantel; 
 
     public function __construct($args = []) {
         $this->id = $args['id'] ?? null;
@@ -20,6 +21,7 @@ class Usuario extends ActiveRecord {
         $this->apellido = $args['apellido'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->rol = $args['rol'] ?? '0';
+        $this->plantel = $args['plantel'] ?? '0';
     }
 
     // Mensajes de validación para la creación de la cuenta
@@ -104,7 +106,7 @@ class Usuario extends ActiveRecord {
 
         
         if ($password != $this->password) {
-            self::$alertas['error'][] = 'Password Incorrecto o tu cuenta no ha sido confirmada';
+            self::$alertas['error'][] = 'Password Incorrecto';
         } else {
             return true;
         }
