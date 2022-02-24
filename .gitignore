@@ -2,3 +2,7 @@ node_modules
 .DS_Store
 vendor
 .env
+src/
+gulpfile.js
+package.json
+package-lock.json
