@@ -1,21 +1,12 @@
 <?php include_once __DIR__ . '/../templates/barra.php'; ?>
-<div class="row">
-    <div class="col-md-6 py-4 text-white text-center promociones"><h2 class="">Promociones Febrero</h2></div>
-    <div class="col-md-6 bg-info ">
-        <ul class="list-unstyled my-3 mx-2">
-            <li class="mb-1 fw-bold text-white"> &raquo; Lorem ipsum dolor sit, amet consectetur adipisicing elit</li>
-            <li class="mb-1 "> &raquo; Lorem ipsum dolor sit, amet consectetur adipisicing elit</li>
-            <li class="mb-1 "> &raquo; Lorem ipsum dolor sit, amet consectetur adipisicing elit</li>
-            <li class="mb-1 "> &raquo; Lorem ipsum dolor sit, amet consectetur adipisicing elit</li>
-        </ul>
-    </div>
-</div>
 
-<main class="container-xl mb-2">
+<div class="hero"></div>
 
-    <h2 class="text-center p-2">Oferta Academica</h2>
+<main class="container-xl d-flex flex-column align-items-center mb-2">
 
-    <div id="indicadores" class="carousel slide" data-bs-ride="carousel">
+    <h2 class="my-2">Oferta Academica</h2>
+
+    <div id="indicadores" class="carousel slide carrusel" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button class="active" type="button" data-bs-target="#indicadores" data-bs-slide-to="0"></button>
             <button type="button" data-bs-target="#indicadores" data-bs-slide-to="1"></button>
@@ -48,12 +39,39 @@
     </div>
 </main>
 
-<!-- <section>
-    <h2 class="text-center">Galeria</h2>
+<section>
+    <h2 class="text-center my-2">Promociones Febrero</h2>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 promociones ">
+            
+        </div>
+        <div class="col-md-6">
+            <div class="row justify-content-center gap-2">
+                <div class="col-md-5 d-flex justify-content-center mt-2 mt-md-0">
+                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <div class="container-xl galeria-imagenes">
+<section>
+    <h2 class="text-center my-2">Galeria</h2>
 
+    <div class="container-xl mb-2">
+        <div class="row galeria-imagenes justify-content-center">
+            
+        </div>
     </div>
 
-</section> -->
+</section>
 

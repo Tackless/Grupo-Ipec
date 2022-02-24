@@ -6,6 +6,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const cssnano = require('cssnano');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser-js');
+const purgecss = require('gulp-purgecss');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin'); // Minificar imagenes 
 const notify = require('gulp-notify');
@@ -29,6 +30,18 @@ function css() {
         .pipe( dest('public/build/css') );
 }
 
+function cssbuild( done ) {
+    src('/build/css/app.css')
+        .pipe( rename({
+            suffix: '.min'
+        }))
+        .pipe( purgecss({
+            content: ['index.php']
+        }))
+        .pipe( dest('public/build/css'))
+
+    done();
+}
 
 function javascript() {
     return src(paths.js)
@@ -62,6 +75,6 @@ function watchArchivos() {
     watch( paths.imagenes, versionWebp );
 }
 
-exports.css = css;
+exports.css = cssbuild;
 exports.watchArchivos = watchArchivos;
 exports.default = parallel(css, javascript,  imagenes, versionWebp,  watchArchivos ); 

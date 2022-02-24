@@ -14,23 +14,15 @@
     <header class="header d-flex flex-column flex-md-row justify-content-center pb-1">
         <div class="d-flex flex-column flex-md-row align-items-center">
             <a href="/"><img class="logo m-md-1 text-center" src="build/img/logo.webp" alt="Logo Ipec"></a>
-            <a href="/"><h1 class="m-0 text-dark text-center">Grupo<span class="text-primary"> Ipec</span></h1></a>
+            <a href="/"><h1 class="m-0 text-dark text-uppercase text-center">Grupo Ipec</h1></a>
         </div>
     </header>
 
     <?php echo $contenido; ?>
     
-    <footer>
-        <div class="bg-primary">
-            <div class="navbar navbar-expand-lg container navbar-light">
-            <nav class="navbar-nav container d-flex flex-md-row justify-content-md-around text-center">
-                <a class="btn text-white text-decoration-none m-1 p-1 d-block" href="/">Inicio</a>
-                <a class="btn text-white text-decoration-none m-1 p-1 d-block" href="/cita">Agendar Cita</a>
-                <a class="btn text-white text-decoration-none m-1 p-1 d-block" href="/">Iniciar Sesión</a>
-            </nav>
-        </div>
-        <p class="text-center text-white mb-0">Todos los Derechos Reservados | Donovan Eliosa <?php echo date('Y'); ?> &copy;</p>
-        </div>
+    <footer class="bg-light border-top">
+        
+        <p class="text-center text-dark mb-0">Todos los Derechos Reservados | Donovan Eliosa <?php echo date('Y'); ?> &copy;</p>
     </footer>
 
     <?php echo $script ?? ''; ?>

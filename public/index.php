@@ -11,6 +11,7 @@ $router = new Router();
 
 $router->get('/', [MainController::class, 'index']);
 $router->get('/bachillerato', [MainController::class, 'bachillerato']);
+$router->get('/bachillerato-modalidades', [MainController::class, 'bachilleratoModalidades']);
 $router->get('/licenciaturas', [MainController::class, 'licenciaturas']);
 $router->get('/licenciatura', [MainController::class, 'licenciatura']);
 $router->get('/cita', [MainController::class, 'cita']);

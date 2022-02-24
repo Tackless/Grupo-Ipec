@@ -6,13 +6,14 @@
         <div class="row justify-content-center">
             <p class="col-md-10 bg-success text-white text-center fs-3">Cita Creada con Éxito</p>
         </div>
+        <a href="/" class="btn btn-outline-info p-1 mx-auto">Volver a Inicio</a>
 
     <?php endif  ?>
 
     <div class="row justify-content-center">
         <form method="POST" class="col-md-10 needs-validation" novalidate>
             <fieldset>
-                <legend class="bg-primary text-center text-white fs-2 fw-bold">Tus Datos</legend>
+                <legend class="bg-info text-center text-white fs-2 fw-bold">Tus Datos</legend>
                 <div class="mb-1">
                     <label for="nombre" class="form-label">Nombre: </label>
                     <input type="text" id="nombre" class="form-control" placeholder="Tu Nombre" name="contacto[nombre]" required>
@@ -77,7 +78,7 @@
             </fieldset>
 
             <div class="d-grid d-md-flex">
-                <input type="submit" class="btn btn-secondary my-1 fs-5 px-1" value="Enviar Formulario">
+                <input type="submit" class="btn btn-success my-1 fs-5 fw-bold px-1" value="Enviar Formulario">
             </div>
         </form>
     </div>

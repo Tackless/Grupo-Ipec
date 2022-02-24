@@ -31,7 +31,19 @@ class MainController {
 
         $bachillerato = Bachillerato::find($id);
 
-        $router->render('/inicio/bachillerato', [
+        $router->render('/bach/bachillerato', [
+            'bachillerato' => $bachillerato
+        ]);
+    }
+
+    public static function bachilleratoModalidades(Router $router) {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $bachillerato = Bachillerato::all();
+        $router->render('/bach/listado', [
             'bachillerato' => $bachillerato
         ]);
     }
