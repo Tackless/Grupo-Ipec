@@ -67,13 +67,11 @@
                 </div>
                 <div class="mb-1">
                     <label class="form-label" for="fecha">Fecha: </label>
-                    <input class="form-control" type="date" id="fecha" min="<?php echo date('Y-m-d', strtotime('+1 day') ); ?>" name="contacto[fecha]" required>
+                    <input class="form-control" type="date" id="fecha-cita" min="<?php echo date('Y-m-d', strtotime('+1 day') ); ?>" name="contacto[fecha]" required>
                     <span class="invalid-feedback">Elige una Fecha Válida.</span>
                 </div>
-                <div class="mb-1">
-                    <label class="form-label" for="hora">Hora</label>
-                    <input class="form-control" type="time" id="hora" min="08:00" max="19:00" name="contacto[hora]" required>
-                    <span class="invalid-feedback">Elige una Hora Válida.</span>
+                <div class="mb-1" id="hora-cita">
+                    
                 </div>
             </fieldset>
 

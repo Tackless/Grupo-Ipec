@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    eventListeners();
-    validacion();
-    crearGaleria();
+    iniciarApp();
 });
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+function iniciarApp() {
+    validacion();
+    eventListeners();
+    buscarPorFecha();
+    crearGaleria();
+    seleccionarFecha();
+};
 function validacion() {
     'use strict'
 
@@ -24,13 +28,11 @@ function validacion() {
             }, false)
         })
 };
-
 function eventListeners() {
     //Muestra campos condicionales
     const metodoContacto = document.querySelectorAll('input[name="contacto[contacto]"]');
     metodoContacto.forEach(input => input.addEventListener('click', mostrarMetodosContacto));
 };
-
 function mostrarMetodosContacto(event) {
     const contactoDiv = document.querySelector('#contacto');
 
@@ -66,21 +68,22 @@ function mostrarMetodosContacto(event) {
         `;
     }
 };
-
 function crearGaleria(){
     const galeria = document.querySelector('.galeria-imagenes');
 
-    for(let i = 1; i <= 6; i++){
-        const imagen = document.createElement('div');
-        imagen.classList.add("col-6","col-md-4","col-lg-2","d-flex","justify-content-center","mb-1");
-        imagen.innerHTML = `
-            <img loading="lazy" src="build/img/galeria/${i}.webp" alt="Imagen Galería">
-        `;
-        imagen.onclick = function() {
-            mostrarImagen(i);
-        }
-        galeria.appendChild(imagen);
-    }
+    if (galeria) {
+        for(let i = 1; i <= 6; i++){
+            const imagen = document.createElement('div');
+            imagen.classList.add("col-6","col-md-4","col-lg-2","d-flex","justify-content-center","mb-1");
+            imagen.innerHTML = `
+                <img loading="lazy" src="build/img/galeria/${i}.webp" alt="Imagen Galería">
+            `;
+            imagen.onclick = function() {
+                mostrarImagen(i);
+            }
+            galeria.appendChild(imagen);
+        };
+    };
 };
 function mostrarImagen(id) {
     const imagen = document.createElement('picture');
@@ -114,4 +117,41 @@ function mostrarImagen(id) {
     const body = document.querySelector('body');
     body.appendChild(overlay)
     body.classList.add('fijar-body');
-}
+};
+function seleccionarFecha() {
+    const inputFecha = document.querySelector('#fecha-cita');
+    const horaCita = document.querySelector('#hora-cita');
+    let diaNombre = '';
+    let horaMaxima = '';
+    if (inputFecha) {
+        inputFecha.addEventListener('input', function (e) {
+            const dia = new Date(e.target.value).getUTCDay();
+            
+            if ( [0].includes(dia)) {
+                diaNombre = 'l Domingo';
+                horaMaxima = '12:45';
+            } else if ([6].includes(dia)) {
+                diaNombre = 'l Sábado';
+                horaMaxima = '13:45';
+            } else {
+                diaNombre = ' Lunes a Viernes'
+                horaMaxima = '17:45';
+            }
+    
+            horaCita.innerHTML = `
+                <label class="form-label" for="hora">Hora de${diaNombre} (09:00 - ${horaMaxima})</label>
+                <input class="form-control" type="time" id="hora" min="09:00" max="${horaMaxima}" name="contacto[hora]" required>
+                <span class="invalid-feedback">Elige una Hora Válida.</span>
+            `;
+        });
+    }
+};
+function buscarPorFecha() {
+    const fechaInput = document.querySelector('#fecha-listado');
+    if (fechaInput) {
+        fechaInput.addEventListener('input', (e) => {
+            const fechaSeleccionada = e.target.value;
+            window.location = `?fecha=${fechaSeleccionada}`;
+        });
+    };
+};
