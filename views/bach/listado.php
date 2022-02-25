@@ -4,7 +4,7 @@
     <div class="row">
     <?php foreach ($bachillerato as $opcion) : ?>
         
-        <div class="container-xl col-md-4 mb-1 ">
+        <div class="container-xl col-md-6 col-lg-4 mb-1 ">
             <div class="card rounded">
                 <img src="build/img/bach/<?php echo $opcion->id; ?>.webp" alt="Imagen opcion" class="card-img-top">
                 <div class="card-body">

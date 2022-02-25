@@ -4,7 +4,7 @@
 
 <main class="container-xl d-flex flex-column align-items-center mb-2">
 
-    <h2 class="my-2">Oferta Academica</h2>
+    <h2 class="my-2 text-center">Oferta Academica</h2>
 
     <div id="indicadores" class="carousel slide carrusel" data-bs-ride="carousel">
         <div class="carousel-indicators">

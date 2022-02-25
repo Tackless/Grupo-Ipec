@@ -22,10 +22,7 @@
 
     <?php echo $contenido; ?>
     
-    <footer class="bg-light border-top">
-        
-        <p class="text-center text-dark mb-0">Todos los Derechos Reservados | Donovan Eliosa <?php echo date('Y'); ?> &copy;</p>
-    </footer>
+    <?php include_once __DIR__ . '/templates/footer.php'; ?>
 
     <?php echo $script ?? ''; ?>
     <script src="build/js/bundle.min.js"></script>

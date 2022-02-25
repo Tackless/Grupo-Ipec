@@ -20,13 +20,13 @@
                     <span class="invalid-feedback">Escribe tu Nombre.</span>
                 </div>
                 <div class="mb-1">
-                    <label for="nombre" class="form-label">Apellido: </label>
-                    <input type="text" id="nombre" class="form-control" placeholder="Tu Apellido" name="contacto[apellido]" required>
+                    <label for="apellido" class="form-label">Apellido: </label>
+                    <input type="text" id="apellido" class="form-control" placeholder="Tu Apellido" name="contacto[apellido]" required>
                     <span class="invalid-feedback">Escribe tu Apellido.</span>
                 </div>
                 <div class="mb-1">
-                    <label for="asunto" class="form-label">Plantel: </label>
-                    <select class="form-select" id="validationCustom04" name="contacto[plantel]" required>
+                    <label for="plantel" class="form-label">Plantel: </label>
+                    <select class="form-select" id="plantel" name="contacto[plantel]" required>
                         <option selected disabled value="">--Seleccionar--</option>
                         <option>Chalco</option>
                         <option>Valle de Chalco</option>
@@ -34,8 +34,8 @@
                     <span class="invalid-feedback">Elige una opción.</span>
                 </div>
                 <div class="mb-1">
-                    <label for="asunto" class="form-label">Informes sobre: </label>
-                    <select class="form-select" id="validationCustom04" name="contacto[informes]" required>
+                    <label for="informes" class="form-label">Informes sobre: </label>
+                    <select class="form-select" id="informes" name="contacto[informes]" required>
                         <option selected disabled value="">--Seleccionar--</option>
                         <option>Lic. Psicología</option>
                         <option>Lic. Derecho</option>
@@ -48,7 +48,7 @@
                     <span class="invalid-feedback">Elige una opción.</span>
                 </div>
 
-                <legend class="f-5">Elige forma de contacto: </legend>
+                <legend class="fs-6">Elige forma de contacto: </legend>
                 <div class="mb-1">
                     <input class="form-check-input" type="radio" value="telefono" id="contactar-telefono" name="contacto[contacto]" required>
                     <label class="form-check-label" for="contactar-telefono">Teléfono</label>
@@ -66,7 +66,7 @@
                     
                 </div>
                 <div class="mb-1">
-                    <label class="form-label" for="fecha">Fecha: </label>
+                    <label class="form-label" for="fecha-cita">Fecha: </label>
                     <input class="form-control" type="date" id="fecha-cita" min="<?php echo date('Y-m-d', strtotime('+1 day') ); ?>" name="contacto[fecha]" required>
                     <span class="invalid-feedback">Elige una Fecha Válida.</span>
                 </div>

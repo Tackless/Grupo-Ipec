@@ -31,7 +31,21 @@ function validacion() {
 function eventListeners() {
     //Muestra campos condicionales
     const metodoContacto = document.querySelectorAll('input[name="contacto[contacto]"]');
+    const plantelFooter = document.querySelectorAll('input[name="plantel-footer"]');
     metodoContacto.forEach(input => input.addEventListener('click', mostrarMetodosContacto));
+    plantelFooter.forEach(input => input.addEventListener('click', plantelMapa));
+};
+function plantelMapa(event) {
+    console.log('hi');
+    const plantelMapa = document.querySelector('#plantel-mapa');
+    let plantel = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.4414695268347!2d-98.90222885021497!3d19.263158751006234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce1ec99c9cfe8b%3A0xe234a05ac680ee66!2sAv.%20Cuauht%C3%A9moc%20Pte.%2043%2C%20Salitreria%2C%2056600%20Chalco%20de%20D%C3%ADaz%20Covarrubias%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1645726965874!5m2!1ses-419!2smx';
+
+    if (event.target.value === 'valle') {
+        plantel = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1331.517655788919!2d-98.94464262925123!3d19.277988542737923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce1c157e59e573%3A0xfb8e18f62463f56!2sPol%C3%ADgono%201%2C%20Alfredo%20Baranda%2C%2056610%20Valle%20de%20Chalco%20Solidaridad%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1645727432084!5m2!1ses-419!2smx'
+    };
+    plantelMapa.innerHTML = `
+        <iframe src="${plantel}" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        `;
 };
 function mostrarMetodosContacto(event) {
     const contactoDiv = document.querySelector('#contacto');
@@ -66,7 +80,7 @@ function mostrarMetodosContacto(event) {
             <input type="email" id="email" class="form-control" placeholder="Tu E-mail" name="contacto[email]" required>
             <span class="invalid-feedback">Ingresa tu E-mail.</span>
         `;
-    }
+    };
 };
 function crearGaleria(){
     const galeria = document.querySelector('.galeria-imagenes');
