@@ -34,9 +34,11 @@ class CitasController {
         $consulta .= " WHERE fecha =  '${fecha}' ";
 
         $citas = Cita::SQL($consulta);
+        $todas = Cita::all();
 
         $router->render('/auth/citas', [
             'citas' => $citas,
+            'todas' => $todas,
             'fecha' => $fecha
         ]);
     }

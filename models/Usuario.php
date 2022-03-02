@@ -102,10 +102,8 @@ class Usuario extends ActiveRecord {
     }
 
     public function comprobarPasswordAndConfirmado($password) {
-        // $resultado = password_verify($password, $this->password);
-
-        
-        if ($password != $this->password) {
+        $resultado = password_verify($password, $this->password);
+        if (!$resultado) {
             self::$alertas['error'][] = 'Password Incorrecto';
         } else {
             return true;
