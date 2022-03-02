@@ -1,7 +1,4 @@
 <?php include_once __DIR__ . '/../templates/barra.php'; ?>
-
-
-
 <main class="container-xl d-flex flex-column "> 
     <h2 class="text-center mt-2">Registrar Nuevo Alumno</h2>
     <div class="row justify-content-evenly">

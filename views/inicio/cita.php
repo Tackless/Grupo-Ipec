@@ -1,5 +1,5 @@
 <?php include_once __DIR__ . '/../templates/barra.php'; ?>
-<div class="container-xl p-2 d-grid gap-2">
+<main class="container-xl p-2 d-grid gap-2">
     <h2 class="text-center">Agendar Cita</h2>
 
     <?php if ($resultado) :?>
@@ -80,4 +80,4 @@
             </div>
         </form>
     </div>
-</div>
+</main>
