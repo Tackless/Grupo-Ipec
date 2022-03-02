@@ -7,11 +7,16 @@
 }
 
 .promociones {
-    background-image: url('../img/febrero.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 20rem;
+}
+.no-webp .promociones {
+    background-image: url('../img/marzo.jpg');
+}
+.webp .promociones {
+    background-image: url('../img/marzo.webp');
 }
 
 .carrusel {

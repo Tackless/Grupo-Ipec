@@ -32,12 +32,13 @@ class LoginController {
                         $_SESSION['nombre'] = $usuario->nombre . " " . $usuario->apellido;
                         $_SESSION['plantel'] = $usuario->plantel;
                         $_SESSION['login'] = true;
+                        $_SESSION['rol'] = $usuario->rol ?? null;
                         // Redireccionar
                         if ($usuario->rol === '1') {
-                            $_SESSION['rol'] = $usuario->rol ?? null;
                             header('location: /admin');
+                        } else if ($usuario->rol === '2') {
+                            header('location: /gestion');
                         } else if ($usuario->rol === '3') {
-                            $_SESSION['rol'] = $usuario->rol ?? null;
                             header('location: /citas');
                         } else {
                             header('location: /cita');

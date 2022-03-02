@@ -40,6 +40,18 @@ function validarORedireccionar(string $url, int $limite) {
     return $id;
 }
 
+function validarORedireccionarNoLimite(string $url) {
+    // Validar que sea un ID válido
+    $id = $_GET['id'];
+    $id = filter_var($id, FILTER_VALIDATE_INT);
+
+    if (!$id) {
+        header("Location: /${$url}");
+    }
+
+    return $id;
+}
+
 function esUltimo(string $actual, string $proximo) : bool {
 
     if ($actual != $proximo) {

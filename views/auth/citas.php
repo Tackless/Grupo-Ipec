@@ -22,10 +22,11 @@
                 $idCita = 0;
                 foreach ($citas as $key => $cita) :
                 ?>
-            <li class="col-sm-5 col-md-3 m-1 p-1 border border-dark rounded-3 bg-white">
+            <li class="col-sm-5 col-md-3 m-1 p-1 border border-dark rounded-3">
                 <p>ID: <span><?php echo $cita->id; ?></span></p>
                 <p>Hora: <span><?php echo $cita->hora; ?></span></p>
-                <p>plantel: <span><?php echo $cita->plantel; ?></span></p>
+                <p>Plantel: <span><?php echo $cita->plantel; ?></span></p>
+                <p>Informes: <span><?php echo $cita->informes; ?></span></p>
                 <p>Cliente: <span><?php echo $cita->nombre . ' ' . $cita->apellido; ?></span></p>
                 <p>Email: <span><?php echo $cita->email; ?></span></p>
                 <p>Teléfono: <span><?php echo $cita->telefono; ?></span></p>

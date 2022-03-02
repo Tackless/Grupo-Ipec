@@ -1,11 +1,12 @@
 // Colores
-$azul_rey: #2196f3;
+$azulClaro: #2196f3;
 $azul: #0303b5;
 $beige: #ffddb8;
+$rojo: rgb(169, 0, 0);
 
 $primary: $azul;
-$info: $azul_rey;
-$warning: $beige;
+$info: $azulClaro;
+$danger: $rojo;
 
 // Tipografía 
 $headings-font-weight: 700;

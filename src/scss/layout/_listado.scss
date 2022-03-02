@@ -1,0 +1,16 @@
+@use 'base/variables' as v;
+@use 'base/custom' as *;
+
+.listado-modalidades {
+    background-color: transparent;
+    color: v.$negro;
+    transition-property: background-color, color;
+    transition-timing-function: ease;
+    transition-duration: .3s;
+    
+}
+
+.listado-modalidades:hover {
+    background-color: $azulClaro;
+    color: v.$blanco;
+}

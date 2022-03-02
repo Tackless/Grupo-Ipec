@@ -36,7 +36,6 @@ class CitasController {
         $citas = Cita::SQL($consulta);
 
         $router->render('/auth/citas', [
-            'nombre' => $_SESSION['nombre'],
             'citas' => $citas,
             'fecha' => $fecha
         ]);

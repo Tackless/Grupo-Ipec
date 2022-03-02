@@ -40,28 +40,23 @@
 </main>
 
 <section>
-    <h2 class="text-center my-2">Promociones Febrero</h2>
+    <h2 class="text-center my-2">Promociones Marzo</h2>
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6 promociones ">
             
         </div>
         <div class="col-md-6">
             <div class="row justify-content-center gap-2">
-                <div class="col-md-5 d-flex justify-content-center mt-2 mt-md-0">
-                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
+                <div class="col-md-6 d-flex justify-content-center mt-2 mt-md-0">
+                    <a type="button" data-bs-toggle="modal" data-bs-target="#modalPromoChalco" class="btn btn-outline-info p-2 w-75">Chalco</a>
                 </div>
-                <div class="col-md-5 d-flex justify-content-center">
-                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
-                </div>
-                <div class="col-md-5 d-flex justify-content-center">
-                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
-                </div>
-                <div class="col-md-5 d-flex justify-content-center">
-                    <a href="#" class="btn btn-outline-info">Lorem ipsum dolor, sit amet</a>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <a type="button" data-bs-toggle="modal" data-bs-target="#modalPromoValle" class="btn btn-outline-info p-2 w-75">Valle de Chalco</a>
                 </div>
             </div>
         </div>
     </div>
+    <?php include_once __DIR__ . '/../templates/modal-promociones.php'; ?>
 </section>
 
 <section>

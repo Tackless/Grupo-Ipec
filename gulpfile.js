@@ -14,6 +14,7 @@ const cache = require('gulp-cache');
 const clean = require('gulp-clean');
 const webp = require('gulp-webp');
 
+
 const paths = {
     scss: 'src/scss/**/*.scss',
     js: 'src/js/**/*.js',
@@ -31,14 +32,20 @@ function css() {
 }
 
 function cssbuild( done ) {
+    const mix = require('laravel-mix');
+    require('laravel-mix-purgecss');
+    mix.sass('/build/css/app.css', 'public/build/css')
+        .purgeCss(); //Add this line and that'll do the job
+
     src('/build/css/app.css')
         .pipe( rename({
             suffix: '.min'
         }))
         .pipe( purgecss({
-            content: ['index.php']
+            content: ['index.blade']
         }))
         .pipe( dest('public/build/css'))
+    
 
     done();
 }
