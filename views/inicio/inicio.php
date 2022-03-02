@@ -14,7 +14,7 @@
             <div class="carousel-item active">
                 <a type="button" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalBach">
                     <h3 class="text-dark text-center mb-0">Bachillerato</h3>
-                    <img src="build/img/bachillerato.webp" alt="Imagen Bachillerato" class="img-fluid">
+                    <img width="200" height="300" src="build/img/bachillerato.webp" alt="Imagen Bachillerato" class="img-fluid">
                 </a>
             </div>
 
@@ -23,7 +23,7 @@
             <div class="carousel-item">
                 <a href="licenciaturas">
                     <h3 class="text-dark text-center mb-0">Licenciatura</h3>
-                    <img src="build/img/licenciaturas.webp" alt="Imagen Licenciaturas" class="img-fluid">
+                    <img width="200" height="300" src="build/img/licenciaturas.webp" alt="Imagen Licenciaturas" class="img-fluid">
                 </a>
             </div>
 

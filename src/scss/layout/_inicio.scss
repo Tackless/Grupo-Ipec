@@ -1,9 +1,14 @@
 .hero {
-    background-image: url('../img/libros.jpg');
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
     height: 40rem;
+}
+.no-webp .hero {
+    background-image: url('../img/libros.jpg');
+}
+.webp .hero {
+    background-image: url('../img/libros.webp');
 }
 
 .promociones {

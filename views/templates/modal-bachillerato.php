@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body table-responsive p-1">
-                <table class="table table-hover table-bordered table-warning table-striped table-sm text-center mb-1">
+                <table class="table table-hover table-info table-striped mb-0">
                     <tbody>
                         <?php foreach ($bachillerato_opciones as $bachillerato) : ?>
                             <tr>

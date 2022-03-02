@@ -15,7 +15,7 @@
 
     <header class="header d-flex flex-column flex-md-row justify-content-center pb-1">
         <div class="d-flex flex-column flex-md-row align-items-center">
-            <a href="/"><img class="logo m-md-1 text-center" src="/build/img/logo.webp" alt="Logo Ipec"></a>
+            <a href="/"><img width="200" height="300" class="logo m-md-1 text-center" src="/build/img/logo.webp" alt="Logo Ipec"></a>
             <a href="/"><h1 class="m-0 text-dark text-uppercase text-center">Grupo Ipec</h1></a>
         </div>
     </header>

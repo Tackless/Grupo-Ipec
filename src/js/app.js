@@ -90,7 +90,7 @@ function crearGaleria(){
             const imagen = document.createElement('div');
             imagen.classList.add("col-6","col-md-4","col-lg-2","d-flex","justify-content-center","mb-1");
             imagen.innerHTML = `
-                <img loading="lazy" src="build/img/galeria/${i}.webp" alt="Imagen Galería">
+                <img width="200" height="300" loading="lazy" src="build/img/galeria/${i}.webp" alt="Imagen Galería">
             `;
             imagen.onclick = function() {
                 mostrarImagen(i);
@@ -102,7 +102,7 @@ function crearGaleria(){
 function mostrarImagen(id) {
     const imagen = document.createElement('picture');
     imagen.innerHTML = `
-        <img loading="lazy" src="build/img/galeria/${id}.webp" alt="Imagen Galería">
+        <img width="200" height="300" loading="lazy" src="build/img/galeria/${id}.webp" alt="Imagen Galería">
     `;
 
     // Crear el overlay con la imagen
