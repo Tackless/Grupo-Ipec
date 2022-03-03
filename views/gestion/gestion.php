@@ -10,7 +10,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <label class="form-label" for="alumno-buscado">Id: </label>
                     <input class="form-control w-75 " type="num" min="1" id="alumno-buscado" name="alumno" value="<?php echo $alumnoId; ?>" placeholder="Id del Alumno">
-                    <input type="submit" value="Buscar" class="btn btn-info text-white">
+                    <input type="submit" value="Buscar" class="btn btn-primary text-white">
                 </div>
             </form>
         </div>
@@ -42,7 +42,7 @@
                     <input type="hidden" name="id" value="<?php echo $alumno->id; ?>">
                     <input type="submit" class="btn btn-danger " value="Eliminar">
                 </form>
-                <a href="/gestion/actualizar?id=<?php echo $alumno->id; ?>" class="btn btn-info text-white">Actualizar</a>
+                <a href="/gestion/actualizar?id=<?php echo $alumno->id; ?>"class="btn btn-primary text-white">Actualizar</a>
             </div>
         </div>
         <?php 
@@ -72,7 +72,7 @@
                         <td class="py-1"><?php echo $alumno->apellido; ?></td>
                         <td class="py-1"><?php echo $alumno->plantel; ?></td>
                         <td class="py-1"><?php echo $alumno->modalidad; ?></td>
-                        <td><a href="/gestion/actualizar?id=<?php echo $alumno->id; ?>" class="btn btn-info text-white">Actualizar</a></td>
+                        <td><a href="/gestion/actualizar?id=<?php echo $alumno->id; ?>" class="btn btn-primary text-white">Actualizar</a></td>
                         <td>
                             <form method="POST" class="w-100" action="/gestion/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $alumno->id; ?>">

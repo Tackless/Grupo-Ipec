@@ -25,5 +25,10 @@
 }
 
 .carrusel {
-    max-width: 70rem;
+    max-width: 80rem;
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
 }

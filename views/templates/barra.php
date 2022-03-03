@@ -1,6 +1,6 @@
 <div class="border bg-light">
     <div class="navbar navbar-expand-lg container navbar-light justify-content-center">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navegacion2">
+        <button aria-label="abrir navegación" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navegacion2">
             <span class="navbar-toggler-icon"></span>
         </button>
 

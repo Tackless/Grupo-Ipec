@@ -10,7 +10,7 @@
                     <img class="img-fluid w-100" loading="lazy" src="build/img/bach/<?php echo $opcion->id; ?>.jpg" width="200" height="300" alt="Imagen de la carrera">
                 </picture>
                 <div class="card-body">
-                    <h5 class="card-title text-center"><?php echo ($opcion->nombre); ?></h5>
+                    <h3 class="card-title text-center"><?php echo ($opcion->nombre); ?></h3>
                 </div>
             </a>    
         </div>

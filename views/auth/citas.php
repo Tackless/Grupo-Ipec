@@ -71,7 +71,7 @@
                         <td class="py-1"><?php echo $cita->fecha; ?></td>
                         <td class="py-1"><?php echo $cita->hora; ?></td>
                         <td class="">
-                            <form method="POST" class="w-100" action="/gestion/eliminar">
+                            <form method="POST" class="w-100" action="/citas/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $cita->id; ?>">
                                 <input type="submit" class="btn btn-danger " value="Eliminar">
                             </form>
@@ -83,7 +83,3 @@
         </div>
     </section>
 </main>
-
-<?php 
-    $script = '<script src="build/js/buscador.js"></script>';
-?>
