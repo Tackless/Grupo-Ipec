@@ -37,12 +37,13 @@
                 <p>Modalidad: </p>
                 <p class="ms-auto"><?php echo $alumno->modalidad; ?></p>
             </div>
-            <div class="d-flex">
-                <form method="POST" class="w-100" action="/gestion/eliminar">
+            <div class="d-flex justify-content-between"> 
+                <a href="/alumnos/detalles?id=<?php echo $alumno->id; ?>"class="btn btn-primary text-white">Detalles</a>
+                <a href="/gestion/editar?id=<?php echo $alumno->id; ?>" class="btn btn-primary text-white">Editar</a>
+                <form method="POST" class="" action="/gestion/eliminar">
                     <input type="hidden" name="id" value="<?php echo $alumno->id; ?>">
                     <input type="submit" class="btn btn-danger " value="Eliminar">
                 </form>
-                <a href="/gestion/actualizar?id=<?php echo $alumno->id; ?>"class="btn btn-primary text-white">Actualizar</a>
             </div>
         </div>
         <?php 
@@ -72,7 +73,8 @@
                         <td class="py-1"><?php echo $alumno->apellido; ?></td>
                         <td class="py-1"><?php echo $alumno->plantel; ?></td>
                         <td class="py-1"><?php echo $alumno->modalidad; ?></td>
-                        <td><a href="/gestion/actualizar?id=<?php echo $alumno->id; ?>" class="btn btn-primary text-white">Actualizar</a></td>
+                        <td><a href="/alumnos/detalles?id=<?php echo $alumno->id; ?>" class="btn btn-primary text-white">Detalles</a></td>
+                        <td><a href="/gestion/editar?id=<?php echo $alumno->id; ?>" class="btn btn-primary text-white">Editar</a></td>
                         <td>
                             <form method="POST" class="w-100" action="/gestion/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $alumno->id; ?>">

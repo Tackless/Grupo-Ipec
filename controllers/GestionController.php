@@ -56,7 +56,7 @@ class GestionController {
         ]);
     }
 
-    public static function actualizar(Router $router) {
+    public static function editar(Router $router) {
 
         if (!isset($_SESSION)) {
             session_start();
@@ -87,11 +87,12 @@ class GestionController {
             $resultado = $alumno->guardar();
         }
 
-        $router->render('/gestion/actualizar', [
+        $router->render('/gestion/editar', [
             'alumno' => $alumno,
             'resultado' => $resultado
         ]);
     }
+
     public static function eliminar() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

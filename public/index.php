@@ -6,6 +6,7 @@ use Controllers\CitasController;
 use Controllers\MainController;
 use Controllers\LoginController;
 use Controllers\GestionController;
+use Controllers\AlumnoController;
 use MVC\Router;
 
 $router = new Router();
@@ -30,9 +31,14 @@ $router->post('/citas/eliminar', [CitasController::class, 'eliminar']);
 $router->get('/gestion', [GestionController::class, 'index']);
 $router->get('/gestion/crear', [GestionController::class, 'crear']);
 $router->post('/gestion/crear', [GestionController::class, 'crear']);
-$router->get('/gestion/actualizar', [GestionController::class, 'actualizar']);
-$router->post('/gestion/actualizar', [GestionController::class, 'actualizar']);
+$router->get('/gestion/editar', [GestionController::class, 'editar']);
+$router->post('/gestion/editar', [GestionController::class, 'editar']);
 $router->post('/gestion/eliminar', [GestionController::class, 'eliminar']);
+
+// Alumnos
+$router->get('/alumnos/detalles', [AlumnoController::class, 'index']);
+$router->post('/alumnos/detalles', [AlumnoController::class, 'index']);
+$router->post('/alumnos/eliminar', [AlumnoController::class, 'eliminar']);
 
 // Admin
 $router->get('/admin', [MainController::class, 'index']);

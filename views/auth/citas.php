@@ -68,7 +68,7 @@
                         <td class="py-1"><?php echo $cita->informes; ?></td>
                         <td class="py-1"><?php echo $cita->telefono; ?></td>
                         <td class="py-1"><?php echo $cita->email; ?></td>
-                        <td class="py-1"><?php echo $cita->fecha; ?></td>
+                        <td class="py-1"><?php $date = date_create($cita->fecha); echo date_format($date,"d-m-Y");  ?></td>
                         <td class="py-1"><?php echo $cita->hora; ?></td>
                         <td class="">
                             <form method="POST" class="w-100" action="/citas/eliminar">
