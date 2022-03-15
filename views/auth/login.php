@@ -9,9 +9,18 @@
 
         <form method="POST" class="col-md-10 needs-validation text-start" novalidate>
             <div class="mb-1">
-                <label class="form-label" for="usuario">ID: </label>
-                <input class="form-control" type="text" id="usuario" placeholder="Tu ID" name="id" required>
-                <span class="invalid-feedback">Escribe tu ID.</span>
+                <label for="usuario" class="form-label">Tipo de Usuario: </label>
+                <select class="form-select" id="usuario" name="usuario" required>
+                    <option selected disabled value="">--Seleccionar--</option>
+                    <option value="1">Administración</option>
+                    <option value="2">Alumno</option>
+                </select>
+                <span class="invalid-feedback">Elige una opción.</span>
+            </div>
+            <div class="mb-1">
+                <label class="form-label" for="usuario">ID / Matricula: </label>
+                <input class="form-control" type="text" id="usuario" placeholder="Tu ID / Matricula" name="id" required>
+                <span class="invalid-feedback">Escribe tu ID / Matricula.</span>
             </div>
             
             <div class="mb-1">

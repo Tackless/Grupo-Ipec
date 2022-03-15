@@ -41,4 +41,25 @@ class Alumno extends ActiveRecord {
     public function hashPassword() {
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
     }
+
+    public function validarLogin() {
+        if (!$this->id) {
+            self::$alertas['error'][] = 'El Id es obligatorio';
+        }
+        
+        if (!$this->password) {
+            self::$alertas['error'][] = 'El Password es obligatorio';
+        }
+
+        return self::$alertas;
+    }
+
+    public function comprobarPasswordAndConfirmado($password) {
+        $resultado = password_verify($password, $this->password);
+        if (!$resultado) {
+            self::$alertas['error'][] = 'Password Incorrecto';
+        } else {
+            return true;
+        }
+    }
 }

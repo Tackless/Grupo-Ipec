@@ -10,15 +10,11 @@
                     <p class="text-dark my-1 my-md-0">Hola: <?php echo $_SESSION['nombre'] ?? ''; ?></p>
                     <?php switch ($_SESSION['rol']) {
                         case '1':
-                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/citas">Ver Citas</a>');
-                        case '2':
                             echo('<a class="nav-link text-dark my-1 my-md-0" href="/gestion">Ver Gestion</a>');
-                            break;
-                        case '3':
                             echo('<a class="nav-link text-dark my-1 my-md-0" href="/citas">Ver Citas</a>');
                             break;
                         default:
-                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/calificaciones">Ver Calificaciones</a>');
+                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/">Información</a>');
                             break;
                     } ?>
                     <a class="nav-link text-dark my-1 my-md-0" href="/logout">Cerrar Sesión</a>
