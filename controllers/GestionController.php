@@ -19,7 +19,7 @@ class GestionController {
     
         $consulta = "SELECT id, nombre, apellido, plantel, modalidad ";
         $consulta .= " FROM alumnos";
-        $consulta .= " WHERE id = '${alumnoId}' ";
+        $consulta .= " WHERE matricula = '${alumnoId}' ";
 
         $busqueda = Alumno::SQL($consulta);
         $todos = Alumno::all();
@@ -42,17 +42,32 @@ class GestionController {
         $alumno = new Alumno;
         $resultado = false;
 
+        $alertas = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            // Crear una nueva instancia
-            $vendedor = new Alumno($_POST['alumno']);
-        
-            $resultado = $vendedor->guardar();
+            $alumno->sincronizar($_POST['alumno']);
+
+            // Verificar que el usuario no este registrado
+            $resultado = $alumno->existeAlumno();
+
+            if ($resultado->num_rows) {
+                $alertas = Alumno::getAlertas();
+            } else {
+                // Hashear el passowrd
+                $alumno->hashPassword();
+
+                // Crear el usuario
+                $resultado = $alumno->guardar();
+                if ($resultado) {
+                    header('Location: /gestion');
+                }
+            }
         }
 
         $router->render('/gestion/crear', [
             'alumno' => $alumno,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'alertas' => $alertas
         ]);
     }
 
@@ -76,19 +91,44 @@ class GestionController {
             header('Location: /gestion');
         }
 
+        $resultado = false;
+        $alertas = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-            // Asignar los valores
-            $args = $_POST['alumno'];
-        
+
+            if ($_POST['alumno']['matricula'] !== $alumno->matricula ) {
+                
+                // Sincronizar objeto en memoria con lo que el usuario escribió
+                $alumno->sincronizar($_POST['alumno']);
+
+                // Verificar que el usuario no este registrado
+                $resultado = $alumno->existeAlumno();
+            }
+
             // Sincronizar objeto en memoria con lo que el usuario escribió
-            $alumno->sincronizar($args);
+            $alumno->sincronizar($_POST['alumno']);
+
+            if ($resultado->num_rows) {
+                $alertas = Alumno::getAlertas();
+                
+            } else {
+
+                // Hashear el passowrd
+                $alumno->hashPassword();
+
+                // Crear el usuario
+                $resultado = $alumno->guardar();
+                if ($resultado) {
+                    header('Location: /gestion');
+                }
+            }
         
             $resultado = $alumno->guardar();
         }
 
         $router->render('/gestion/editar', [
             'alumno' => $alumno,
+            'alertas' => $alertas,
             'resultado' => $resultado
         ]);
     }

@@ -4,13 +4,13 @@
 
     <a href="gestion/crear" class="btn btn-success mx-auto">Registrar Alumno</a>
     <section>
-        <h3 class="text-center p-2">Buscar Alumnos por Id</h3>
+        <h3 class="text-center p-2">Buscar Alumnos por Matricula</h3>
         <div class="row justify-content-center">
             <form class="col-md-6 "> 
                 <div class="d-flex align-items-center justify-content-between">
-                    <label class="form-label" for="alumno-buscado">Id: </label>
-                    <input class="form-control w-75 " type="num" min="1" id="alumno-buscado" name="alumno" value="<?php echo $alumnoId; ?>" placeholder="Id del Alumno">
-                    <input type="submit" value="Buscar" class="btn btn-primary text-white">
+                    <label class="form-label me-1 my-0" for="alumno-buscado">Matricula: </label>
+                    <input class="form-control w-75 " type="num" min="1" id="alumno-buscado" name="alumno" value="<?php echo $alumnoId ?>" placeholder="Matricula del Alumno"> 
+                    <input type="submit" value="Buscar" class="btn btn-primary text-white ms-1 ">
                 </div>
             </form>
         </div>
@@ -19,7 +19,7 @@
     <section class="row justify-content-center">
     <?php 
         if (count($busqueda) === 0) {
-            echo '<h2 class="text-center p-2">No Hay Alumnos con esa Id</h2>';
+            echo '<h2 class="text-center p-2">No Hay Alumnos con esa Matricula</h2>';
         }
     ?>
 
@@ -58,7 +58,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
+                        <th scope="col">Matricula</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th class="" scope="col">Plantel</th>
@@ -68,12 +68,12 @@
                 <tbody>
                     <?php foreach ($todos as $key => $alumno) :?>
                     <tr>
-                        <th class="py-1" scope="row"><?php echo $alumno->id ?></th>
+                        <th class="py-1" scope="row"><?php echo $alumno->matricula ?></th>
                         <td class="py-1"><?php echo $alumno->nombre; ?></td>
                         <td class="py-1"><?php echo $alumno->apellido; ?></td>
                         <td class="py-1"><?php echo $alumno->plantel; ?></td>
                         <td class="py-1"><?php echo $alumno->modalidad; ?></td>
-                        <td><a href="/alumnos/detalles?id=<?php echo $alumno->id; ?>" class="btn btn-primary text-white">Detalles</a></td>
+                        <td><a href="/alumnos/detalles?id=<?php echo $alumno->id; ?>" class="btn btn-success text-white">Detalles</a></td>
                         <td><a href="/gestion/editar?id=<?php echo $alumno->id; ?>" class="btn btn-primary text-white">Editar</a></td>
                         <td>
                             <form method="POST" class="w-100" action="/gestion/eliminar">

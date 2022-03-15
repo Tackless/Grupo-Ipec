@@ -2,15 +2,15 @@
     <p class="fs-4">Información General</p>
 
     <div class="mb-1">
-        <label for="nombre" class="form-label">Nombre:</label>
+        <label for="nombre" class="form-label">Nombre(s):</label>
         <input type="text" class="form-control" id="nombre" name="alumno[nombre]" value="<?php echo s( $alumno->nombre ); ?>" placeholder="Nombre Alumno(a)" required>
-        <span class="invalid-feedback">Escribe el Nombre.</span>
+        <span class="invalid-feedback">Escribe el Nombre(s).</span>
     </div>
     
     <div class="mb-1">
-        <label for="apellido" class="form-label">Apellido:</label>
+        <label for="apellido" class="form-label">Apellido(s):</label>
         <input type="text" class="form-control" id="apellido" name="alumno[apellido]" value="<?php echo s( $alumno->apellido ); ?>" placeholder="Apellido Alumno(a)" required>
-        <span class="invalid-feedback">Escribe el Apellido.</span>
+        <span class="invalid-feedback">Escribe el Apellido(s).</span>
     </div>
 
     <div class="mb-1">
@@ -36,6 +36,18 @@
             <option>Bachillerato en 1 examen</option>
         </select>
         <span class="invalid-feedback">Elige una opción.</span>
+    </div>
+
+    <div class="mb-1">
+        <label for="matricula" class="form-label">Matricula:</label>
+        <input type="text" class="form-control" id="matricula" name="alumno[matricula]" value="<?php echo s( $alumno->matricula ); ?>" placeholder="Matricula Alumno(a)" required>
+        <span class="invalid-feedback">Escribe la Matricula.</span>
+    </div>
+
+    <div class="mb-1">
+        <label for="password" class="form-label">Contraseña:</label>
+        <input type="text" class="form-control" id="password" name="alumno[password]" value="" placeholder="Contraseña Alumno(a)" required>
+        <span class="invalid-feedback">Escribe la Contraseña.</span>
     </div>
 </fieldset>
 
