@@ -13,9 +13,9 @@
                             echo('<a class="nav-link text-dark my-1 my-md-0" href="/gestion">Ver Gestion</a>');
                             echo('<a class="nav-link text-dark my-1 my-md-0" href="/citas">Ver Citas</a>');
                             break;
-                        default:
-                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/">Información</a>');
-                            break;
+                        default: ?>
+                            <a class="nav-link text-dark my-1 my-md-0" href="/alumnos/informacion?matricula=<?php echo $_SESSION['matricula'] ?>">Información</a>
+                            <?php break;
                     } ?>
                     <a class="nav-link text-dark my-1 my-md-0" href="/logout">Cerrar Sesión</a>
                     

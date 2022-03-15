@@ -38,6 +38,7 @@ class LoginController {
                         };
 
                         $_SESSION['id'] = $usuario->id;
+                        $_SESSION['matricula'] = $usuario->matricula ?? '';
                         $_SESSION['nombre'] = $usuario->nombre . " " . $usuario->apellido;
                         $_SESSION['login'] = true;
                         $_SESSION['rol'] = $usuario->rol ?? '2';
@@ -45,7 +46,7 @@ class LoginController {
                         if ($usuario->rol === '1') {
                             header('location: /gestion');
                         } else {
-                            header('location: /agendar-cita');
+                            header("location: /");
                         }
                     }
                 } else {
@@ -58,11 +59,6 @@ class LoginController {
             }
         }
         $alertas = Usuario::getAlertas();
-        // if ($_POST['usuario'] === '1') {
-        // } else {
-        //     $alertas = Alumno::getAlertas();
-        // }
-        
         
         $router->render('/auth/login', [
             'alertas' => $alertas

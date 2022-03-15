@@ -13,7 +13,7 @@ class GestionController {
             session_start();
         }
         
-        isRol('2');
+        isRol('1');
 
         $alumnoId =  $_GET['alumno'] ?? '';
     
@@ -37,7 +37,7 @@ class GestionController {
             session_start();
         }
         
-        isRol('2');
+        isRol('1');
 
         $alumno = new Alumno;
         $resultado = false;
@@ -77,7 +77,7 @@ class GestionController {
             session_start();
         }
         
-        isRol('2');
+        isRol('1');
 
         $id = $_GET['id'];
         $id = filter_var($id, FILTER_VALIDATE_INT);

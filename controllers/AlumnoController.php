@@ -15,7 +15,7 @@ class AlumnoController {
             session_start();
         }
         
-        isRol('2');
+        isRol('1');
 
         $id = $_GET['id'];
         $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -72,4 +72,36 @@ class AlumnoController {
         }
     }
 
+    public static function informacion(Router $router) {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        
+        isRol('2');
+        
+        $matricula = $_GET['matricula'];
+        $matricula = filter_var($matricula, FILTER_VALIDATE_INT);
+        
+        if (!$matricula) {
+            header('Location: /');
+        }
+        
+        $alumno = Alumno::where('matricula', $matricula);
+        
+        if (!$alumno || $alumno->matricula !== $_SESSION['matricula'] ) {
+            header('Location: /');
+        }
+
+        $id = $_SESSION['id'];
+
+        $pagos = Pagos::whereAll('alumnoId', $id);
+        $asistencias = Asistencias::whereAll('alumnoId', $id);
+
+        $router->render('/alumnos/informacion', [
+            'alumno' => $alumno,
+            'pagos' => $pagos,
+            'asistencias' => $asistencias
+        ]);
+    }
 }

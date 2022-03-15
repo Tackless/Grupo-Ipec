@@ -13,7 +13,7 @@ class CitasController {
             session_start();
         }
 
-        isRol('3');
+        isRol('1');
 
         $fecha = $_GET['fecha'] ?? date('Y-m-d');
 

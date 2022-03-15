@@ -38,6 +38,7 @@ $router->post('/gestion/eliminar', [GestionController::class, 'eliminar']);
 // Alumnos
 $router->get('/alumnos/detalles', [AlumnoController::class, 'index']);
 $router->post('/alumnos/detalles', [AlumnoController::class, 'index']);
+$router->get('/alumnos/informacion', [AlumnoController::class, 'informacion']);
 $router->post('/alumnos/eliminar', [AlumnoController::class, 'eliminar']);
 
 // Admin

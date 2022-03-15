@@ -1,14 +1,10 @@
 <?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <main class="container-xl d-flex flex-column "> 
     <h2 class="text-center my-2">Alumno(a): <?php echo ($alumno->nombre . " " . $alumno->apellido)  ?> </h2>
-    <div class="row justify-content-evenly">
-        <a href="/gestion" class="col-md-2 btn btn-info text-white p-1 my-1">Volver</a>
-    </div>
     <div class="row justify-content-center">
         <div class="col-md-6 table-responsive">
             <div class="d-flex justify-content-between my-1"> 
                 <h3 class="mb-0">Pagos</h3>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modalPago" class="btn btn-success my-auto">+ Registro</button>
             </div>
             <table class="table table-striped table-hover">
                 <thead>
@@ -46,24 +42,15 @@
                                         break;
                                 }
                             ?></td>
-                            <td>
-                            <form method="POST" class="w-100" action="/alumnos/eliminar">
-                                <input type="hidden" name="tipo" value="pago">
-                                <input type="hidden" name="id" value="<?php echo $pago->id; ?>">
-                                <input type="submit" class="btn btn-danger " value="Eliminar">
-                            </form>
-                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?php include_once __DIR__ . '/../templates/modal-pago.php'; ?>
         </div>
 
         <div class="col-md-6 table-responsive">
             <div class="d-flex justify-content-between my-1"> 
                 <h3 class="mb-0">Asistencia</h3>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modalAsistencia" class="btn btn-success my-auto">+ Registro</button>
             </div>
             <table class="table table-striped table-hover">
                 <thead>
@@ -80,18 +67,10 @@
                                 echo date_format($date,"d-m-Y");  
                             ?></td>
                             <td class="py-1"><?php echo $asistencia->estatus ?></td>
-                            <td>
-                            <form method="POST" class="w-100" action="/alumnos/eliminar">
-                                <input type="hidden" name="tipo" value="asistencia">
-                                <input type="hidden" name="id" value="<?php echo $asistencia->id; ?>">
-                                <input type="submit" class="btn btn-danger " value="Eliminar">
-                            </form>
-                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?php include_once __DIR__ . '/../templates/modal-asistencia.php'; ?>
         </div>
     </div>
 </main>
