@@ -29,5 +29,31 @@
                 <li class="">8 fotografía tamaño infantil blanco y negro papel mate sin brillos ni retoques</li>
             </ul>
         </div>
+
+        <div class="col-md-6">
+            <h3 class="bg-info text-white p-1">Horarios</h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Día</th>
+                            <th scope="col">Hora de Inicio</th>
+                            <th scope="col">Hora de Fin</th>
+                            <th scope="col">Plantel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($horarios as $key => $horario) :?>
+                        <tr>
+                            <th class="py-1" scope="row"><?php echo utf8_encode($horario->dia) ?></th>
+                            <td class="py-1"><?php $date = date_create($horario->hora); echo date_format($date,"H:i"); ?></td>
+                            <td class="py-1"><?php $date = date_create($horario->horaFin); echo date_format($date,"H:i"); ?></td>
+                            <td class="py-1"><?php echo $horario->plantel; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </main>

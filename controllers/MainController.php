@@ -5,6 +5,8 @@ namespace Controllers;
 use Model\Bachillerato;
 use Model\Carreras;
 use Model\Cita;
+use Model\Horario;
+use Model\HorarioBach;
 use MVC\Router;
 
 class MainController {
@@ -27,12 +29,14 @@ class MainController {
             session_start();
         }
 
-        $id = validarORedireccionar('/', 3);
+        $id = validarORedireccionar('/', 5);
 
         $bachillerato = Bachillerato::find($id);
+        $horarios = HorarioBach::whereAll('idBach', $id);
 
         $router->render('/bach/bachillerato', [
-            'bachillerato' => $bachillerato
+            'bachillerato' => $bachillerato,
+            'horarios' => $horarios
         ]);
     }
 
@@ -68,12 +72,14 @@ class MainController {
             session_start();
         }
 
-        $id = validarORedireccionar('licenciaturas', 4);
+        $id = validarORedireccionar('licenciaturas', 5);
 
         $carrera = Carreras::find($id);
+        $horarios = Horario::whereAll('idCarrera', $id);
 
         $router->render('/licenciaturas/licenciatura', [
-            'carrera' => $carrera
+            'carrera' => $carrera,
+            'horarios' => $horarios
 
         ]);
     }

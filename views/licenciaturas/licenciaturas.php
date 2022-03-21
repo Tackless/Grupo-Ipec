@@ -1,7 +1,7 @@
 <?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <main class="container-xl p-2 d-grid gap-2">
     <h2 class="text-center">Licenciaturas</h2>
-    <div class="row">
+    <div class="row justify-content-center">
     <?php foreach ($carreras as $carrera) : ?>
         
         <div class="col-md-6 mb-1 ">
