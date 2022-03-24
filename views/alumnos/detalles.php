@@ -2,7 +2,9 @@
 <main class="container-xl d-flex flex-column "> 
     <h2 class="text-center my-2">Alumno(a): <?php echo ($alumno->nombre . " " . $alumno->apellido)  ?> </h2>
     <div class="row justify-content-evenly">
-        <a href="/gestion" class="col-md-2 btn btn-info text-white p-1 my-1">Volver</a>
+        <?php include_once __DIR__ . '/../templates/modal-confirmar.php'; ?>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#modalEliminar" class="col-md-2 btn btn-danger text-white p-1 my-1">Eliminar</button>
+        <a href="/gestion" class="col-md-2 btn btn-primary text-white p-1 my-1">Volver</a>
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6 table-responsive">

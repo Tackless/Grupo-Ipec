@@ -59,9 +59,12 @@ class LoginController {
             }
         }
         $alertas = Usuario::getAlertas();
+
+        $titulo = utf8_decode('Iniciar Sesión');
         
         $router->render('/auth/login', [
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'titulo' => $titulo
         ]);
     }
 

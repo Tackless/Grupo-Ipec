@@ -85,7 +85,7 @@ function crearGaleria(){
     const galeria = document.querySelector('.galeria-imagenes');
 
     if (galeria) {
-        for(let i = 1; i <= 6; i++){
+        for(let i = 1; i <= 12; i++){
             const imagen = document.createElement('div');
             imagen.classList.add("col-6","col-md-4","col-lg-2","d-flex","justify-content-center","mb-1");
             imagen.innerHTML = `

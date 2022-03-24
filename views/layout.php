@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sitio web del Instituo de Progreso Enseñanza y Computación IPEC">
-    <title>Grupo Ipec</title>
+    <title>Grupo Ipec | <?php echo utf8_encode($titulo) ?></title>
     <link rel="shortcut icon" href="build/img/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="/build/css/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

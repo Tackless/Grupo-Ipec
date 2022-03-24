@@ -31,14 +31,14 @@
                         echo ('<li class="ms-5">15</li>');
                         break;
                 } ?>
-                <p>Original y 5 copias:</p>
+                <li><p>Original y 5 copias:</p></li>
                 <li class="ms-5">Acta de nacimiento</li>
                 <li class="ms-5">Curp</li>
                 <li class="ms-5">Certificado de secundaria</li>
-                <p>5 copias de:</p>
+                <li><p>5 copias de:</p></li>
                 <li class="ms-5">Comprobante de domicilio</li>
                 <li class="ms-5">INE</li>
-                <p>Fotos:</p>
+                <li><p>Fotos:</p></li>
                 <li class="">8 fotografía tamaño infantil blanco y negro papel mate sin brillos ni retoques</li>
                 
             </ul>

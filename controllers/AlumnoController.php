@@ -50,7 +50,8 @@ class AlumnoController {
             'alumno' => $alumno,
             'pagos' => $pagos,
             'asistencias' => $asistencias,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'titulo' => 'Editar Detalles Alumno'
         ]);
     }
     public static function eliminar() {
@@ -98,10 +99,13 @@ class AlumnoController {
         $pagos = Pagos::whereAll('alumnoId', $id);
         $asistencias = Asistencias::whereAll('alumnoId', $id);
 
+        $titulo = utf8_decode('Información del Alumno');
+
         $router->render('/alumnos/informacion', [
             'alumno' => $alumno,
             'pagos' => $pagos,
-            'asistencias' => $asistencias
+            'asistencias' => $asistencias,
+            'titulo' => $titulo
         ]);
     }
 }

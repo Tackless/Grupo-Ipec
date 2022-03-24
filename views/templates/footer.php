@@ -7,11 +7,11 @@
                 <ul class="list-unstyled">
                     <li class="d-flex">
                         <p class="fs-5 text-dark">Chalco:</p>
-                        <p class="fs-5 text-primary ms-auto">55-26-45-60-40</p>
+                        <a href="tel:55-2645-6040" class="fs-5 text-primary ms-auto">55-26-45-60-40</a>
                     </li> 
                     <li class="d-flex">
                         <p class="fs-5 text-dark">Valle de Chalco:</p>
-                        <p class="fs-5 text-primary ms-auto">55-62-67-44-26</p>
+                        <a href="tel:55-6267-4426" class="fs-5 text-primary ms-auto">55-62-67-44-26</a>
                     </li> 
                 </ul>
                 <p class="fs-4">Correo electronico (E-mail): </p>

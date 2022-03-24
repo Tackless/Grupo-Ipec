@@ -39,7 +39,8 @@ class CitasController {
         $router->render('/auth/citas', [
             'citas' => $citas,
             'todas' => $todas,
-            'fecha' => $fecha
+            'fecha' => $fecha,
+            'titulo' => 'Ver Citas'
         ]);
     }
 

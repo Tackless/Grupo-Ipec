@@ -19,7 +19,21 @@ class MainController {
         $bachillerato_opciones = Bachillerato::all();
 
         $router->render('/inicio/inicio', [
-            'bachillerato_opciones' => $bachillerato_opciones
+            'bachillerato_opciones' => $bachillerato_opciones,
+            'titulo' => 'Inicio'
+        ]);
+    }
+
+    public static function bachilleratoModalidades(Router $router) {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $bachillerato = Bachillerato::all();
+        $router->render('/bach/listado', [
+            'bachillerato' => $bachillerato,
+            'titulo' => 'Modalidades de Bachillerato'
         ]);
     }
 
@@ -33,22 +47,12 @@ class MainController {
 
         $bachillerato = Bachillerato::find($id);
         $horarios = HorarioBach::whereAll('idBach', $id);
+        $titulo = $bachillerato->nombre;
 
         $router->render('/bach/bachillerato', [
             'bachillerato' => $bachillerato,
-            'horarios' => $horarios
-        ]);
-    }
-
-    public static function bachilleratoModalidades(Router $router) {
-        
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
-        $bachillerato = Bachillerato::all();
-        $router->render('/bach/listado', [
-            'bachillerato' => $bachillerato
+            'horarios' => $horarios,
+            'titulo' => 'Bachillerato ' . $titulo
         ]);
     }
 
@@ -61,7 +65,8 @@ class MainController {
         $carreras = Carreras::all();
 
         $router->render('/licenciaturas/licenciaturas', [
-            'carreras' => $carreras
+            'carreras' => $carreras,
+            'titulo' => 'Carreras'
 
         ]);
     }
@@ -76,10 +81,12 @@ class MainController {
 
         $carrera = Carreras::find($id);
         $horarios = Horario::whereAll('idCarrera', $id);
+        $titulo = $carrera->nombre;
 
         $router->render('/licenciaturas/licenciatura', [
             'carrera' => $carrera,
-            'horarios' => $horarios
+            'horarios' => $horarios,
+            'titulo' => $titulo
 
         ]);
     }
@@ -103,7 +110,8 @@ class MainController {
 
         $router->render('/inicio/cita', [
 
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'titulo' => 'Agendar Cita'
 
         ]);
     }

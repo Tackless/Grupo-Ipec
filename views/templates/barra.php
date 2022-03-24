@@ -10,7 +10,7 @@
                     <p class="text-dark my-1 my-md-0">Hola: <?php echo $_SESSION['nombre'] ?? ''; ?></p>
                     <?php switch ($_SESSION['rol']) {
                         case '1':
-                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/gestion">Ver Gestion</a>');
+                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/gestion">Ver Gestión</a>');
                             echo('<a class="nav-link text-dark my-1 my-md-0" href="/citas">Ver Citas</a>');
                             break;
                         default: ?>

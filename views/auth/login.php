@@ -18,8 +18,8 @@
                 <span class="invalid-feedback">Elige una opción.</span>
             </div>
             <div class="mb-1">
-                <label class="form-label" for="usuario">ID / Matricula: </label>
-                <input class="form-control" type="text" id="usuario" placeholder="Tu ID / Matricula" name="id" required>
+                <label class="form-label" for="id">ID / Matricula: </label>
+                <input class="form-control" type="text" id="id" placeholder="Tu ID / Matricula" name="id" required>
                 <span class="invalid-feedback">Escribe tu ID / Matricula.</span>
             </div>
             

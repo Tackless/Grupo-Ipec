@@ -24,10 +24,13 @@ class GestionController {
         $busqueda = Alumno::SQL($consulta);
         $todos = Alumno::all();
 
+        $titulo = utf8_decode('Gestión');
+
         $router->render('/gestion/gestion', [
             'alumnoId' => $alumnoId,
             'busqueda' => $busqueda,
-            'todos' => $todos
+            'todos' => $todos,
+            'titulo' => $titulo
         ]);
     }
 
@@ -67,7 +70,8 @@ class GestionController {
         $router->render('/gestion/crear', [
             'alumno' => $alumno,
             'resultado' => $resultado,
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'titulo' => 'Registrar Nuevo Alumno'
         ]);
     }
 
@@ -129,7 +133,8 @@ class GestionController {
         $router->render('/gestion/editar', [
             'alumno' => $alumno,
             'alertas' => $alertas,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'titulo' => 'Editar Alumno'
         ]);
     }
 
