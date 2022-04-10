@@ -30,3 +30,8 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}

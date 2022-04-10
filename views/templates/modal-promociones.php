@@ -12,16 +12,16 @@
                         <tr>
                             <th class="p-1" scope="col">Licenciatura</th>
                             <th class="p-1" scope="col">Inscripción</th>
-                            <th class="p-1" scope="col">Mensuales</th>
+                            <th class="p-1" scope="col">Semanales</th>
                             <th class="p-1" scope="col">Horario</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th class="">Lic. <br> Derecho</th>
-                            <td class="p-1">$800</td>
-                            <td class="p-1">$800</td>
-                            <td class="">Sábado <br> 09:00 - 14:00</td>
+                            <td class="p-1">$300</td>
+                            <td class="p-1">$120</td>
+                            <td class="">Sábado <br> 17:00 - 19:00</td>
                         </tr>
                     </tbody>
                 </table>

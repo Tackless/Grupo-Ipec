@@ -1,36 +1,24 @@
 <?php include_once __DIR__ . '/../templates/barra.php'; ?>
 <main class="container-xl p-2 d-grid gap-2">
-    <h2 class="text-center">Bachillerato <?php echo utf8_encode($bachillerato->nombre); ?></h2>
+    <h2 class="text-center"><?php echo utf8_encode($certificacion->nombre); ?></h2>
 
     <div class="row">
         <div class="col-md-8">
             <h3 class="bg-info text-white p-1">Perfil de Ingreso</h3>
-            <p><?php echo utf8_encode($bachillerato->ingreso); ?></p>
+            <p><?php echo utf8_encode($certificacion->ingreso); ?></p>
 
             <h3 class="bg-info text-white p-1">Perfil de Egreso</h3>
-            <p><?php echo utf8_encode($bachillerato->egreso); ?></p>
+            <p><?php echo utf8_encode($certificacion->egreso); ?></p>
         </div>
         <div class="col-md-4">
             <picture>
-                <source srcset="build/img/bach/<?php echo $bachillerato->id; ?>.webp" type="image/webp">
-                <img class="img-fluid w-100" loading="lazy" src="build/img/bach/<?php echo $bachillerato->id; ?>.jpg" width="200" height="300" alt="Imagen de la carrera">
+                <source srcset="build/img/cert/<?php echo $certificacion->id; ?>.webp" type="image/webp">
+                <img class="img-fluid w-100" loading="lazy" src="build/img/cert/<?php echo $certificacion->id; ?>.jpg" width="200" height="300" alt="Imagen de la carrera">
             </picture>
             <h3 class="text-center my-2">Requisitos Administrativos</h3>
             <ul class="list-unstyled">
                 <p class="mt-1 mb-0">Edad Minima:</p>
-                <?php switch ($bachillerato->id) {
-                    case '2':
-                        echo ('<li class="ms-5">18</li>');
-                        break;  
-
-                    case '3':
-                        echo ('<li class="ms-5">22</li>');
-                        break;  
-
-                    default:
-                        echo ('<li class="ms-5">15</li>');
-                        break;
-                } ?>
+                <li class="ms-5">13</li>
                 <li><p>Original y 5 copias:</p></li>
                 <li class="ms-5">Acta de nacimiento</li>
                 <li class="ms-5">Curp</li>
@@ -44,7 +32,7 @@
             </ul>
         </div>
 
-        <?php if ($bachillerato->id != 3) : ?>
+        <?php if ($certificacion->id != 3) : ?>
             <div class="col-md-6">
                 <h3 class="bg-info text-white p-1">Horarios</h3>
                 <div class="table-responsive">

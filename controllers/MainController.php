@@ -4,9 +4,11 @@ namespace Controllers;
 
 use Model\Bachillerato;
 use Model\Carreras;
+use Model\Certificacion;
 use Model\Cita;
 use Model\Horario;
 use Model\HorarioBach;
+use Model\HorarioCert;
 use MVC\Router;
 
 class MainController {
@@ -21,38 +23,6 @@ class MainController {
         $router->render('/inicio/inicio', [
             'bachillerato_opciones' => $bachillerato_opciones,
             'titulo' => 'Inicio'
-        ]);
-    }
-
-    public static function bachilleratoModalidades(Router $router) {
-        
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
-        $bachillerato = Bachillerato::all();
-        $router->render('/bach/listado', [
-            'bachillerato' => $bachillerato,
-            'titulo' => 'Modalidades de Bachillerato'
-        ]);
-    }
-
-    public static function bachillerato(Router $router) {
-        
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
-        $id = validarORedireccionar('/', 5);
-
-        $bachillerato = Bachillerato::find($id);
-        $horarios = HorarioBach::whereAll('idBach', $id);
-        $titulo = $bachillerato->nombre;
-
-        $router->render('/bach/bachillerato', [
-            'bachillerato' => $bachillerato,
-            'horarios' => $horarios,
-            'titulo' => 'Bachillerato ' . $titulo
         ]);
     }
 
@@ -88,6 +58,70 @@ class MainController {
             'horarios' => $horarios,
             'titulo' => $titulo
 
+        ]);
+    }
+    public static function bachilleratoModalidades(Router $router) {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $bachillerato = Bachillerato::all();
+        $router->render('/bach/listado', [
+            'bachillerato' => $bachillerato,
+            'titulo' => 'Modalidades de Bachillerato'
+        ]);
+    }
+
+    public static function bachillerato(Router $router) {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $id = validarORedireccionar('/', 5);
+
+        $bachillerato = Bachillerato::find($id);
+        $horarios = HorarioBach::whereAll('idBach', $id);
+        $titulo = $bachillerato->nombre;
+
+        $router->render('/bach/bachillerato', [
+            'bachillerato' => $bachillerato,
+            'horarios' => $horarios,
+            'titulo' => 'Bachillerato ' . $titulo
+        ]);
+    }
+    
+    public static function certificaciones(Router $router) {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        
+        $certificaciones = Certificacion::all();
+        
+        $router->render('/cert/listado', [
+            'certificaciones' => $certificaciones,
+            'titulo' => 'Certificaciones'
+        ]);
+    }
+    
+    public static function certificacion(Router $router) {
+        
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $id = validarORedireccionar('/', 2);
+
+        $certificacion = Certificacion::find($id);
+        $horarios = HorarioCert::whereAll('idCert', $id);
+        $titulo = $certificacion->nombre;
+
+        $router->render('/cert/certificacion', [
+            'certificacion' => $certificacion,
+            'horarios' => $horarios,
+            'titulo' => $titulo
         ]);
     }
     

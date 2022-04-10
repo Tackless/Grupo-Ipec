@@ -12,16 +12,16 @@
 }
 
 .promociones {
-    background-position: center center;
+    background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 20rem;
 }
 .no-webp .promociones {
-    background-image: url('../img/marzo.jpg');
+    background-image: url('../img/mayo.jpg');
 }
 .webp .promociones {
-    background-image: url('../img/marzo.webp');
+    background-image: url('../img/mayo.webp');
 }
 
 .carrusel {

@@ -8,9 +8,17 @@
             <nav class="navbar-nav container d-flex flex-lg-row justify-content-lg-between text-center">
                 <?php if (isset($_SESSION['login'])) {?>
                     <p class="text-dark my-1 my-md-0">Hola: <?php echo $_SESSION['nombre'] ?? ''; ?></p>
+                    <a class="nav-link text-dark my-1 my-md-0" href="/">Inicio</a>
                     <?php switch ($_SESSION['rol']) {
+                        
                         case '1':
                             echo('<a class="nav-link text-dark my-1 my-md-0" href="/gestion">Ver Gestión</a>');
+                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/citas">Ver Citas</a>');
+                            break;
+                        case '2':
+                            echo('<a class="nav-link text-dark my-1 my-md-0" href="/gestion">Ver Gestión</a>');
+                            break;
+                        case '3':
                             echo('<a class="nav-link text-dark my-1 my-md-0" href="/citas">Ver Citas</a>');
                             break;
                         default: ?>
@@ -23,6 +31,7 @@
                     <a class="nav-link text-dark my-1 my-md-0" href="/">Inicio</a>
                     <a class="nav-link text-dark my-1 my-md-0" href="/licenciaturas">Licenciaturas</a>
                     <a class="nav-link text-dark my-1 my-md-0" href="/bachillerato-modalidades">Bachillerato</a>
+                    <a class="nav-link text-dark my-1 my-md-0" href="/certificaciones">Certificaciones</a>
                     <a class="nav-link text-dark my-1 my-md-0" href="/agendar-cita">Agendar Cita</a>
                     <a class="nav-link text-dark my-1 my-md-0" href="/iniciar-sesion">Iniciar Sesión</a>
                 <?php } ?>

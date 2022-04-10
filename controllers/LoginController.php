@@ -41,12 +41,14 @@ class LoginController {
                         $_SESSION['matricula'] = $usuario->matricula ?? '';
                         $_SESSION['nombre'] = $usuario->nombre . " " . $usuario->apellido;
                         $_SESSION['login'] = true;
-                        $_SESSION['rol'] = $usuario->rol ?? '2';
+                        $_SESSION['rol'] = $usuario->rol ?? '4';
                         // Redireccionar
-                        if ($usuario->rol === '1') {
+                        if ($usuario->rol === '2' || $usuario->rol === '1' ) {
                             header('location: /gestion');
+                        }elseif ($usuario->rol === '3') {
+                            header('location: /citas');
                         } else {
-                            header("location: /");
+                            header("location: /alumnos/informacion?matricula=" . $_SESSION['matricula']);
                         }
                     }
                 } else {
